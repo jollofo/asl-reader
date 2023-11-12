@@ -7,12 +7,11 @@ import time
 
 cap = cv2.VideoCapture(0)
 detector = HandDetector(maxHands = 1)
-classifier = Classifier("Model/keras_model.h5", "Model/labels.txt")
+classifier = Classifier("asl-reader/Model/keras_model.h5", "asl-reader/Model/labels.txt")
 
 offset = 20
 imgSize = 300
 
-folder = "Data/A"
 counter = 0
 
 labels = ["A", "B", "C"]
@@ -57,6 +56,6 @@ while True:
         cv2.imshow("ImageCrop", imgCrop)
         cv2.imshow("ImageWHite", imgWhite)
 
-    cv2.imshow("Image", img)
+    cv2.imshow("Image", imgOutput)
     cv2.waitKey(1)
 
